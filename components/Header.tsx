@@ -2,18 +2,15 @@
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import ThemeToggle from './ThemeToggle';
-import { useTheme } from 'next-themes';
 
 export default function Header() {
   const { count } = useCart();
-  const {theme}  = useTheme();
-  
   
   return (
     <header className="sticky top-0 z-30 border-b bg-background/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <img src= {theme == 'light' ?'./assets/images/logo_light.png' : './assets/images/logo_dark.png'} alt="Pickzy" className="h-20 w-20 object-contain p-2 transition group-hover:scale-105"/>
+          <img src='./assets/images/logo_light.png' alt="Pickzy" className="h-20 w-20 object-contain p-2 transition group-hover:scale-105"/>
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/" className="relative">
